@@ -1,19 +1,296 @@
-/**index.wxss**/
-.userinfo {
+.app {
+  min-height: 96vh;
+  width: 94vw;
+  padding: 2vh 3vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #aaa;
+  background: -webkit-linear-gradient(top, #3d395a, #435f6d);
+  color: white;
 }
 
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.app .search {
+  height: 6vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10rpx;
+  background-color: white;
 }
 
-.usermotto {
-  margin-top: 200px;
+.app .search .left {
+  height: 100%;
+  padding: 0 3vw;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 清除按钮 */
+.app .search .left .clearBtn {
+  height: 54rpx;
+  width: 60rpx;
+}
+
+/* 分隔符 */
+.app .search .separator {
+  height: 56rpx;
+  width: 2rpx;
+  border-left: 2rpx solid gray;
+}
+
+
+/* 右 */
+.app .search .right {
+  height: 100%;
+  width: 20vw;
+}
+
+/* 搜索按钮 */
+.app .search .right .searchBtn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* 搜索按钮图标 */
+.app .search .right .searchBtn .icon {
+  height: 54rpx;
+  width: 54rpx;
+}
+
+/* 头部 */
+.app .header {
+  height: 4vh;
+  width: 100%;
+  margin-top: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* 信息 */
+.app .header .info {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* 定位图标 */
+.app .header .info .localIcon {
+  height: 30rpx;
+  width: 30rpx;
+}
+
+
+/* 城市名 */
+.app .header .info .city {
+  font-size: 14pt;
+  margin-left: 1vw;
+}
+
+/* 日期 */
+.app .header .info .date {
+  font-size: 10pt;
+  margin-left: 1vw;
+}
+
+/* 更新 */
+.app .header .update {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 9pt;
+  color: #707070;
+}
+
+/* 更新图片 */
+.app .header .update .refreshIcon {
+  height: 22rpx;
+  width: 22rpx;
+  margin-left: 1vw;
+}
+
+/* 今日天气 */
+.app .today {
+  height: 43vh;
+  width: 100%;
+  margin-top: 2vh;
+}
+
+.app .today .baseInfo {
+  height: 22vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* 温度 */
+.app .today .baseInfo .temperature {
+  height: 100%;
+  width: 37.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70pt;
+}
+
+/* ℃ */
+.app .today .baseInfo .temperature .symbol {
+  font-size: 20pt;
+  align-self: flex-start;
+  padding-top: 5vh;
+}
+
+/* 天气图片 */
+.app .today .baseInfo .weatherIcon {
+  height: 100%;
+  width: 37.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app .today .baseInfo .weatherIcon .image {
+  height: 176.25rpx;
+  width: 176.25rpx;
+}
+
+
+/* 温度详情 */
+.app .today .baseInfo .detail {
+  height: 100;
+  width: 25%;
+  padding-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20rpx;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.app .today .baseInfo .detail .type {
+  height: 6vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+.app .today .baseInfo .detail .temperature {
+  height: 6vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 10pt;
+}
+
+page{
+  background-color: #f2f2f2;
+}
+/* 5天 */
+.d2{
+  width: 94vw;
+  height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 16rpx;
+  position: relative;
+  background-color: #fff;
+}
+.data_b_item{
+	width: calc(20% - 1px);
+	border-right: 1px solid #E8E8E8;
+	text-align: center;
+}
+.data_b_item_nb{
+	border: none;
+}
+.data_b_item>view{
+	width: 100%;
+}
+.d_block{
+	width: 100%;
+	height: 80px;
+	margin: 10rpx 0;
+}
+.d_week,.d_state{
+	color: 	#333333;
+	font-size: 26rpx;
+	line-height: 50rpx;
+}
+.d_day,.d_wind,.d_wind_level{
+	color: #999999;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	height: 40rpx;
+}
+.weatherLine{
+	width: calc(100% - 20% + 28px);
+	height: 80px;
+	position: absolute;
+	bottom: 90rpx;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.weatherIcon{
+  width: 110rpx;
+  height: 110rpx;
+}
+.windIcon{
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.block{
+  width: 100%;
+  height: 30rpx;
+}
+/* 24小时 */
+.dHours{
+	width: 100%;
+	position: relative;
+	display: inline-block;
+  white-space: nowrap;
+  background-color: #fff;
+}
+.dh_item{
+	width: 132rpx;
+	text-align: center;
+	display: inline-block;
+	padding-bottom: 16rpx;
+}
+.dh_block{
+	width: 132rpx;
+	height: 80px;
+}
+.dh_weather{
+	font-size: 24rpx;
+	color: #999;
+}
+.dh_time{
+	font-size: 26rpx;
+	color: #999;
+}
+.hourLine{
+	width: calc((7 * 132rpx) + 28px);
+	height: 80px;
+	position: absolute;
+	top: 0;
+	left: calc(66rpx - 14px);
 }
