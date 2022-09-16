@@ -1,0 +1,6 @@
+<view class='imagesize'>
+
+  <image src="../../images/w1.png" class='in-image'>
+  </image>
+  <view>name</view>
+</view>
