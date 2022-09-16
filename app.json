@@ -1,12 +1,14 @@
 {
   "pages":[
+    "pages/city/city",
     "pages/index/index"
+  
   ],
   "window":{
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#3d395a",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "Z天气",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "enablePullDownRefresh": true
   },
   "style": "v2",

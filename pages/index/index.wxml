@@ -1,83 +1,16 @@
 <view class="app">
     <view class="search">
         <view class="left">
-            <input class="inputField" confirm-type="search" style="color:#000000;" bindinput="onSearchInputChanged" bindconfirm="onSearchBtnClick" placeholder="请输入城市名" value="{{ inputContent }}" />
+            <input class="inputField" confirm-type="search" bindinput="onSearchInputChanged" bindconfirm="onSearchBtnClick" placeholder="请输入城市名" value="{{ inputContent }}" />
+            <!-- 清除按钮 -->
             <image class="clearBtn" src="../../images/clear.png" style="display: {{ inputContent.length > 0 ? 'block' : 'none' }}" bindtap="onClearBtnClick"></image>
         </view>
         <view class="separator"></view>
-        <!-- 搜索按钮 -->
         <view class="right">
-            <view class="searchBtn" bindtap="onSearchBtnClick">
-                <image class="icon" src="../../images/search.png"></image>
+            <view class="searchBtn" bindtap="onSearchInputChanged">
+            <image  class ='icon' src="../../images/search.png"></image>
             </view>
         </view>
-    </view>
 
-    <!-- 地址、时间、更新时间 -->
-    <view class="header">
-        <!-- 地址、时间 -->
-        <view class="info" bindtap="onLocalBtnClick">
-            <image class="localIcon" src="../../images/location.png"></image>
-            <view class="city">{{ weatherInfo.city.name }}</view>
-            <view class="date">（{{ date }}）</view>
-        </view>
-        <!-- 更新时间、刷新按钮 -->
-        <view class="update" bindtap="onRefreshBtnClick">{{ weatherInfo.now.temperature_time }} 更新
-            <image class="refreshIcon" src="../../images/refresh.png"></image>
-        </view>
     </view>
-
-    <!-- 今日天气信息 -->
-    <view class="today">
-        <view class="baseInfo">
-            <!-- 温度 -->
-            <view class="temperature">{{currentCityData.now.temp}}
-                <view class="symbol">℃</view>
-            </view>
-            <view class="weatherIcon">
-                <image class="image" src="{{currentCityImg}}"></image>
-            </view>
-            <!-- 全天 -->
-            <view class="detail">
-                <view class="type">{{ weatherInfo.now.weather }}</view>
-                <view class="temperature">白天：{{ weatherInfo.today.day_air_temperature }} ℃</view>
-                <view class="temperature">夜晚：{{ weatherInfo.today.night_air_temperature }} ℃</view>
-            </view>
-        </view>
-    </view>
-
-    <view class="d2">
-        <view class="data_b_item" wx:for="{{dayArrs}}" wx:key="index" :class="i==dayArrs.length-1?'.data_b_item_nb':''">
-            <view class="d_week">{{item.week}}</view>
-            <view class="d_day">{{item.date}}</view>
-            <view class="d_icon">
-                <image src="/images/w1.png" class="weatherIcon"></image>
-            </view>
-            <view class="d_state">{{item.wether}}</view>
-            <view class="d_block"></view>
-            <view class="d_wind">
-                <image src="/images/f1.png" class="windIcon"></image>
-            </view>
-            <view class="d_wind_level">{{item.wind_scale?item.wind_scale+'级':''}}</view>
-        </view>
-        <view class="weatherLine">
-            <ec-canvas id="mychart-day-line" canvas-id="myCanvasD" ec="{{ ec }}"></ec-canvas>
-        </view>
-    </view>
-
-    <view class="block"></view>
-    <scroll-view class="dHours" scroll-x>
-        <view class="dh_item" wx:for="{{hourArrs}}" wx:key="index">
-            <view class="dh_block"></view>
-            <view class="dh_weather">{{item.weather}}</view>
-            <view class="dh_wind_f">
-                <image src="/images/f1.png" class="windIcon"></image>
-            </view>
-            <view class="dh_wind dh_weather">{{item.wind}}</view>
-            <view class="dh_time">{{item.bjTime}}</view>
-        </view>
-        <view class="hourLine">
-            <ec-canvas id="mychart-day-line" canvas-id="myCanvasD" ec="{{ ecH }}"></ec-canvas>
-        </view>
-    </scroll-view>
 </view>

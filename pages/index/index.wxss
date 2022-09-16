@@ -1,14 +1,4 @@
-.app {
-  min-height: 96vh;
-  width: 94vw;
-  padding: 2vh 3vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: -webkit-linear-gradient(top, #3d395a, #435f6d);
-  color: white;
-}
-
+ 
 .app .search {
   height: 6vh;
   width: 90vw;
