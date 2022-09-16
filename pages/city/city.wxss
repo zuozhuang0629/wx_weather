@@ -92,7 +92,8 @@ page{
     line-height: 40rpx;
   }
   .a-z .icon-hot{
-    height: 40rpx;
+    width: 35rpx;
+    height: 35rpx;
     line-height: 40rpx;  
     font-size: 30rpx;
   } 

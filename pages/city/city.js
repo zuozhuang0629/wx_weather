@@ -1514,13 +1514,20 @@ Page({
     ak: "**********"
   },
   getPy(e) {
+     var id = e.target.id
+     if(id == ''){
+      id = e.currentTarget.id
+     }
+
     this.setData({
-      firstLetter: e.target.id,
+      firstLetter: id,
       hidden: false,
     })
   },
+  
+
   setPy(e) {
-    console.log(111)
+    console.log(e)
     this.setData({
       scrollTopId: this.data.firstLetter,
 
@@ -1551,9 +1558,10 @@ Page({
       }
     };
   },
+
   //滑动时
   tMove: function (e) {
-    console.log('e');
+    console.log(e);
     if (this.data.firstTime) {
       this.setPosition(e);
       this.setData({
